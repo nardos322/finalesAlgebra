@@ -1,2 +1,13 @@
-!*.tex 
-!/finales/*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.lol
+*.bbl
+*.blg
+*/src/*.pdf
