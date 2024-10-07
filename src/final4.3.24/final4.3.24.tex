@@ -3,11 +3,12 @@
 \usepackage[utf8]{inputenc} % Codificación de caracteres
 \usepackage{amsmath} % Símbolos matemáticos
 \usepackage{amssymb}
+\usepackage[a4paper, top=1cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+
 
 \title{Final Algebra 04/03/2024}
 \author{Nahuel Prieto \\ \texttt{enprieto@dc.uba.ar}} 
 \date{}
-
 \begin{document}
 
 \maketitle
@@ -21,7 +22,7 @@ Probar que $a_n\equiv 4^n \pmod{11}$ $\forall n \in \mathbb{N}$ y calcular el re
 de la division por 11 de $\sum_{n=1}^{2024} a_n$\\ \\
 \textbf{Solucion:} \\
 Probamos por induccion
-\begin{align*}
+\begin{align*}   
     P_{(n)}: a_n \equiv 4^n \pmod{11}
 \end{align*}
 Caso base: ¿$P_{(1)}$ verdadera? Sí, pues $4 \equiv 4 \pmod{11}$\\
@@ -32,22 +33,21 @@ Qpq: $a_{h+2} \equiv 4^{h+2} \pmod{11}$ \\ \\
 obs: $a_h \equiv 4^h (11) \quad \Longleftrightarrow \quad a_h = 11k +4^h, \quad k \in \mathbb{Z}$  \\
 \hspace*{0.4cm}$a_{h+1} \equiv 4^{h+1} (11) \quad \Longleftrightarrow \quad a_{h+1} = 11j +4^{h+1}, \quad j \in \mathbb{Z}$ \\ \\
 por def: $a_{h+2} = a_{h+1} - 10a_h$     
-\begin{align*}
+\begin{align*}  
 \therefore \quad a_{h+2} &\underset{\scriptscriptstyle\text{HI}}{=} (11j + 4^{h+1}) - 10(11k + 4^h) \\
     a_{h+2} &= 11j + 4^{h+1} - 10.11k - 10(4^h) \\
-    a_{h+2} &= 11 \underbrace{(j - 10k)}_{Q} - 6.4^h \\
-    a_{h+2} +6.4^h &= 11Q \quad \Longleftrightarrow \quad 11 \mid a_{h+2} +6.4^h \\ \\ 
-\therefore \quad a_{h+2} +6.4^h &\equiv 0 (11)\\
-    a_{h+2} &\equiv -6.4^h (11) \\
+    a_{h+2} &= 11 \underbrace{(j - 10k)}_{Q} - 6 \cdot 4^h \\
+    a_{h+2} +6 \cdot 4^h &= 11Q \quad \Longleftrightarrow \quad 11 \mid a_{h+2} +6 \cdot 4^h \\ \\
+    \therefore \quad a_{h+2} +6 \cdot 4^h &\equiv 0 (11)\\
+    a_{h+2} &\equiv -6 \cdot 4^h (11) \\
     -a_{h+2} &\underset{\scriptscriptstyle(-1)}{\equiv}  6.4^h (11) \\
     -2a_{h+2} &\underset{\scriptscriptstyle(2)}{\equiv} 4^h (11) \\
     9a_{h+2} &\equiv 4^h (11) \\
-    144a_{h+2} &\underset{\scriptscriptstyle(4^2)}{\equiv}  4^h.4^2 (11) \quad
+    144a_{h+2} &\underset{\scriptscriptstyle(4^2)}{\equiv}  4^h \cdot 4^2 (11) \quad
     \Longleftrightarrow \quad  a_{h+2} \equiv 4^{h+2} (11) \quad 
-    \text{tal como se queria probar}
+    \text{tal como se queria probar} 
 \end{align*}
-obs: $144 = 11.13 + 1$ \\
-$\therefore \quad 144 \equiv 1 (11)$ \\ \\
+obs: $144 = 11 \cdot 13 + 1 \quad \Longleftrightarrow   \quad 144 \equiv 1 (11)$ \\
 Como se probo el caso base y el paso inductivo, se concluye que \\
 $P_{(n)}$ es verdadera $\forall n \in \mathbb{N}$ \\ \\
 Ahora voy a calcular el resto de dividir \\
@@ -68,21 +68,18 @@ voy aplicar PTF, $11 \nmid 4 \quad \Longrightarrow \quad 4^n \equiv 4^{r_{\scrip
     \hline
 \end{tabular} \\ \\ \\
 Viendo la tabla de restos se puede observar que cada 5 sucesiones se vuelven \\
-a repetir los mimos restos\\
+a repetir los mimos restos
 \begin{align*}
 &\therefore \quad \sum_{n=1}^{2024} \underbrace{4^1 + 4^2 + 4^3 + 4^4 + 4^5}_{\text{5 sucesiones}}  + \ldots \ldots  
 + 4^{2024} \\ 
-&4^1 + 4^2 + 4^3 + 4^4 + 4^5 \equiv 4 + 5 + 9 + 3 + 1 \equiv 22 \equiv 0 (11) \\
+&4^1 + 4^2 + 4^3 + 4^4 + 4^5 \equiv 4 + 5 + 9 + 3 + 1 \equiv 22 \equiv 0 (11) 
 \end{align*}
 Voy a pensar las 5 sucesiones como que son un bloque, en $2024 = 5.404 + 4$ \\
 es decir tengo 404 bloques de 5 sucesiones todos esos bloques son congruentes a $0 (11)$.
 Por lo que en la sumatoria sobreviven $4^{2021} + 4^{2022} + 4^{2023} + 4^{2024}$ \\
 que por tabla de restos se que: \\ \\ $4^{2021} + 4^{2022} + 4^{2023} + 4^{2024} \equiv 4 + 5
-+ 9 + 3 \equiv 21 \equiv 10 \quad (11)$ \\
-\begin{align*}
-\therefore \quad \sum_{n=1}^{2024} a_n &\equiv \sum_{n=1}^{2024} 4^n \equiv 10 \quad (11) \\ 
-\end{align*}
-se concluye que  $r_{11}(\sum_{n=1}^{2024} a_n) = 10$
++ 9 + 3 \equiv 21 \equiv 10 \quad (11)$ \\ \\
+$\therefore \quad \sum_{n=1}^{2024} a_n \equiv \sum_{n=1}^{2024} 4^n \equiv 10 \quad (11)$  \hspace{15px}se concluye que  $r_{11}(\sum_{n=1}^{2024} a_n) = 10$
 
 \section{Ejercicio 2}
 a) Enunciar la definicion de divisibilidad para enteros y determinar si la relacion \\
