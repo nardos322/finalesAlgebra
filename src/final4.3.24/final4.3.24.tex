@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc} % Codificación de caracteres
 \usepackage{amsmath} % Símbolos matemáticos
@@ -31,7 +31,7 @@ Paso Inductivo: $\forall h \in \mathbb{N}$, ¿$P_{(h)}$ $\land$ $P_{(h+1)}$ verd
 HI: $a_h \equiv 4^h \pmod{11}$ $\land$ $a_{h+1} \equiv 4^{h+1} \pmod{11}$ \\
 Qpq: $a_{h+2} \equiv 4^{h+2} \pmod{11}$ \\ \\
 obs: $a_h \equiv 4^h (11) \quad \Longleftrightarrow \quad a_h = 11k +4^h, \quad k \in \mathbb{Z}$  \\
-\hspace*{0.4cm}$a_{h+1} \equiv 4^{h+1} (11) \quad \Longleftrightarrow \quad a_{h+1} = 11j +4^{h+1}, \quad j \in \mathbb{Z}$ \\ \\
+\hspace*{0.4cm}$a_{h+1} \equiv 4^{h+1} (11) \quad \Longleftrightarrow \quad a_{h+1} = 11j +4^{h+1}, \quad j \in \mathbb{Z}$ 
 por def: $a_{h+2} = a_{h+1} - 10a_h$     
 \begin{align*}  
 \therefore \quad a_{h+2} &\underset{\scriptscriptstyle\text{HI}}{=} (11j + 4^{h+1}) - 10(11k + 4^h) \\
